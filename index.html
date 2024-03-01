@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Medieval Armor</title>
+        <link rel="shortcut icon" href="https://codehs.com/uploads/9b5e3e43219a82117e2507e7d685ef23" type="image/x-icon">
+        <style>
+            /*fonts*/
+            @font-face {
+                font-family: myFirstFont;
+                src: url(https://fonts.googleapis.com/css2?family=Namdhinggo:wght@400;500;600;700;800&display=swap);
+            }
+
+            * {
+                font-family: myFirstFont;
+            }
+            /*Make video the background*/
+            #myVideo {
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                min-width: 100%; 
+                min-height: 100%;
+            }
+                
+            /*Move button*/
+            #moveBtn {
+                border-radius: 3vw;
+                position: fixed;
+                bottom: 0vw;
+                left: 0vw;
+                width: 100%;
+                z-index: 99;
+                font-size: 29px;
+                border: none;
+                outline: none;
+                background-color: rgba(0,0,0,0.5);
+                color: white;
+                cursor: pointer;
+                padding: 13px;
+                transition: top 0.3s ease, bottom 0.3s ease;
+            }
+                
+            #moveBtn:hover {
+                background-color: rgba(0,0,0,0.7);
+                padding: 17px;
+                border-radius: 3vw;
+        
+            }
+                
+            #indicator {
+                position: fixed;
+                top: 0vw;
+                left: 0vw;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.5);
+                color: white;
+                padding: 10px;
+                display: none;
+            }
+                
+            /*spacing for button*/
+            .br { 
+                display: block; 
+                margin-bottom: 90px; 
+            } 
+            /*Text*/
+            h1 {
+                font-size: 30px;
+            }
+            h3 {
+                font-size: 20px;
+            } 
+            h2 {
+                font-size: 15px;
+            } 
+            ol {
+                list-style-type: upper-roman;
+                font-size: 11px;
+            }
+            a:link {
+                color: white;
+                background-color: transparent;
+                text-decoration: none;
+            }
+            a:visited {
+                color: grey;
+                background-color: transparent;
+                text-decoration: underline;
+            }
+            a:hover {
+                color: pink;
+                background-color: transparent;
+                text-decoration: underline;
+            }
+            a:active {
+                color: pink;
+                background-color: transparent;
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Indicator div -->
+        <video autoplay muted loop id="myVideo">
+            <source src="https://codehs.com/uploads/e661297f5925bd4fe2456b977fc939e6" type="video/mp4">
+        </video>
+            
+        <!-- Move to top button -->
+        <button onclick="moveButtonToTop()" id="moveBtn" title="Move to top">Why to buy a medieval set of armor & sword</button>
+            
+        <!-- Indicator div -->
+        <div id="indicator">
+            <span class="br"></span>
+            <h1>Eleven reasons to buy a set of medieval armor.</h1>
+            <ol>
+                <li>Protection -- Got to keep yourself safe.</li>
+                <li>Display -- Good conversation starter.</li>
+                <li>Collectable -- There are many different types that you could collect.</li>
+                <li>Increases self confidence -- You look alot cooler with it on.</li>
+                <li>Gives you muscles -- A full suit can weigh anywhere between  33 to 55 pounds.</li>
+                <li>Cosplay -- You can go to festivals as a Medievel knight.</li>
+                <li>Gender neutral -- Anyone can waer a suit or armor.</li>
+                <li>It is super awesome.</li>
+                <li>It makes you 10 times more attractive.</li>
+                <li>You can wear it anytime.</li>
+                <li>To reenact wars from the Midieval time period.</li>
+                
+            </ol>
+            
+            <br>
+            
+            <h1>websites you can by it from</h1>
+            <h3><a href='https://armstreet.com/store/armor-suits/'>Armstreet</a></h3>
+            <h3><a href='https://steel-mastery.com/full-armour'>Steel Mastery</a></h3>
+            <h3><a href='https://www.amazon.com/stores/page/4520B1A8-56E4-4D90-80EA-ACE2C234CFDC?ingress=2&visitId=fee4e937-d0b9-4c06-95a0-7dab799aaf7a&store_ref=bl_ast_dp_brandLogo_sto&ref_=ast_bln'>Amazon -- Nautical Mart</a></h3>
+            
+            <h2> If you want to do it for cheaper their are many videos on <a href='youtube.com'>Youtube</a> which can show you how to make armor.</h2>
+            
+            <br>
+            <br>
+            <br>
+            
+            <h5>Made by Colin Long</h5>
+            <h5>Thanks to Logan for reasons and ChatGPT for syntax</h5>
+            
+        </div>
+            
+        <script>
+            var isAtTop = false; // Flag to track if button is at the top
+            var indicatorDiv = document.getElementById('indicator');
+            
+            function moveButtonToTop() {
+                var button = document.getElementById('moveBtn');
+                
+                if (!isAtTop) {
+                    // Set button position to top of the screen
+                    button.style.top = '0vw';
+                    button.style.bottom = 'auto';
+                    isAtTop = true;
+                    indicatorDiv.style.display = 'block'; 
+                } else {
+                // Set button position back to bottom
+                button.style.top = 'auto';
+                button.style.bottom = '0vw';
+                isAtTop = false;
+                indicatorDiv.style.display = 'none'; // Hide indicator
+                }
+            }
+        </script>
+    </body>
+</html>
